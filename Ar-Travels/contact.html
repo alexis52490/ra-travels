@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | RA TRAVELS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="ra-travels-logo.png"
+                     alt="RA Travels Logo">
+            </a>
+
+            
+<ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="ra-travel.html">Tour Packages</a></li>
+<li><a href="reviews.html">Reviews</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Contact Hero -->
+        <section class="contact-hero">
+            <p class="section-label">WE'RE HERE TO HELP</p>
+            <h1>Contact RA TRAVELS</h1>
+            <p>
+                Let's plan your next adventure!
+                Get in touch with us for tour inquiries,
+                bookings, and travel arrangements.
+            </p>
+        </section>
+
+        <!-- Contact Information and Form -->
+        <section class="contact-page">
+
+            <div class="contact-info">
+                <p class="section-label">GET IN TOUCH</p>
+                <h2>We'd Love to Hear From You</h2>
+
+                <p>
+                    Have questions about our land tours?
+                    Contact us and we'll help you plan
+                    a memorable trip.
+                </p>
+
+                <div class="contact-item">
+                    <h3>📞 Contact Number</h3>
+                    <p>0948 686 0907</p>
+                    <a href="tel:+639486860907" class="contact-link">
+                        Call Us Now
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>✉️ Email Address</h3>
+                    <p>ratravels@gmail.com</p>
+                    <a href="mailto:ratravels@gmail.com"
+                       class="contact-link">
+                        Send Us an Email
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>🌏 Our Services</h3>
+                    <p>Land Tours, Beach Getaways, and Custom Trips</p>
+                </div>
+            </div>
+
+            <!-- Inquiry Form -->
+            <div class="contact-form-container">
+                <h2>Send Us an Inquiry</h2>
+                <p>Fill out the form below to prepare your inquiry.</p>
+
+                <form action="mailto:ratravels@gmail.com"
+                      method="post"
+                      enctype="text/plain">
+
+                    <label for="name">Full Name</label>
+                    <input type="text"
+                           id="name"
+                           name="Full Name"
+                           placeholder="Enter your full name"
+                           required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email"
+                           id="email"
+                           name="Email"
+                           placeholder="Enter your email address"
+                           required>
+
+                    <label for="phone">Contact Number</label>
+                    <input type="tel"
+                           id="phone"
+                           name="Contact Number"
+                           placeholder="Enter your phone number"
+                           required>
+
+                    <label for="destination">Preferred Destination</label>
+                   <select id="destination"
+        name="destination"
+        required>
+    <option value="">Select a destination</option>
+    <option value="Boracay">Boracay</option>
+    <option value="Buscalan, Kalinga">Buscalan, Kalinga</option>
+    <option value="Cebu">Cebu</option>
+    <option value="Zambales">Zambales</option>
+    <option value="Inararo">Inararo</option>
+    <option value="Baguio">Baguio</option>
+    <option value="Custom Tour">Other / Custom Tour</option>
+</select>
+                        <option value="">Select a destination</option>
+                        <option value="Boracay">Boracay</option>
+                        <option value="Buscalan, Kalinga">
+                            Buscalan, Kalinga
+                        </option>
+                        <option value="Cebu">Cebu</option>
+                        <option value="Custom Tour">Other / Custom Tour</option>
+                    </select>
+
+                    <label for="date">Preferred Travel Date</label>
+                    <input type="date"
+                           id="date"
+                           name="Preferred Travel Date">
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message"
+                              name="Message"
+                              rows="5"
+                              placeholder="Tell us about your travel plans..."
+                              required></textarea>
+
+                    <button type="submit" class="btn">
+                        Submit Inquiry
+                    </button>
+
+                </form>
+
+                <p class="form-note">
+                    Submitting may open your email application.
+                    If it doesn't, contact us directly by phone or email.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RA TRAVELS. All rights reserved.</p>
+        <p>Making every journey memorable.</p>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const destination = params.get("destination");
+
+    const destinationField =
+        document.querySelector('[name="destination"]');
+
+    if (destination && destinationField) {
+        destinationField.value = destination;
+    }
+});
+</script>
+
+</body>
+</html>

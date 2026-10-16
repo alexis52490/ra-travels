@@ -1,0 +1,1293 @@
+
+/* ==============================
+   RA TRAVELS - GENERAL STYLES
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green-dark: #173f35;
+    --green: #286451;
+    --green-light: #37836b;
+    --orange: #f2a23a;
+    --text-dark: #20372f;
+    --text-muted: #687970;
+    --white: #ffffff;
+    --light-bg: #f7faf8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-dark);
+    background: transparent;
+    line-height: 1.6;
+}
+
+/* UNIVERSAL BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)
+        ),
+        url("boracay.jpg") center / cover no-repeat;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* ==============================
+   NAVIGATION BAR
+============================== */
+
+header {
+    position: relative;
+    z-index: 10;
+    background: transparent;
+    box-shadow: none;
+}
+
+.navbar {
+    width: min(1200px, 92%);
+    min-height: 88px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+    width: 190px;
+    max-height: 85px;
+    height: auto;
+    object-fit: contain;
+}
+.logo span {
+    color: var(--green-dark);
+    font-weight: 800;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: transparent;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--green-light);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--orange);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* MENU BUTTON - HIDDEN ON DESKTOP */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--green-dark);
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* ==============================
+   GENERAL SECTION STYLES
+============================== */
+
+.section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 55px 0 50px;
+    text-align: center;
+}
+
+.section > h2 {
+    color: var(--text-dark);
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.section-label {
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+}
+
+.section-description {
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* ==============================
+   TOUR PACKAGES HERO
+============================== */
+
+.packages-hero {
+    max-width: 1050px;
+    margin: auto;
+    padding: 65px 24px 40px;
+    text-align: center;
+    animation: fadeUp 0.8s ease both;
+}
+
+.packages-hero .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.packages-hero .hero-content > p {
+    color: var(--text-muted);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.packages-hero .hero-content > p:first-child {
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.packages-hero h1 {
+    color: var(--text-dark);
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.packages-hero .hero-content .btn {
+    margin-top: 8px;
+}
+
+/* ==============================
+   DESTINATION GRID
+============================== */
+
+.packages-section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 10px 0 50px;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    text-align: left;
+}
+
+/* ==============================
+   DESTINATION CARDS
+============================== */
+
+.destination-card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    min-height: 390px;
+    padding: 25px;
+    overflow: hidden;
+    border-radius: 22px;
+    color: var(--white);
+    background-color: #456b5c;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(23, 63, 53, 0.13);
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    animation: fadeUp 0.8s ease both;
+}
+
+/* CARD OVERLAY */
+
+.destination-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        to top,
+        rgba(7, 27, 22, 0.94) 0%,
+        rgba(7, 27, 22, 0.60) 42%,
+        rgba(7, 27, 22, 0.05) 100%
+    );
+    transition: background 0.4s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 20px 38px rgba(23, 63, 53, 0.24);
+}
+
+.destination-card:hover::before {
+    background: linear-gradient(
+        to top,
+        rgba(7, 27, 22, 0.97) 0%,
+        rgba(7, 27, 22, 0.68) 55%,
+        rgba(7, 27, 22, 0.12) 100%
+    );
+}
+
+/* DESTINATION IMAGES */
+
+.destination-card.boracay {
+    background-image: url("boracay.jpg");
+}
+
+.destination-card.buscalan {
+    background-image: url("buscalan.jpg");
+}
+
+.destination-card.cebu {
+    background-image: url("cebu.jpg");
+}
+
+.destination-card.zambales {
+    background-image: url("zambales.jpg");
+}
+
+.destination-card.inararo {
+    background-image: url("inararo.jpg");
+}
+
+.destination-card.baguio {
+    background-image: url("baguio.jpg");
+}
+
+/* CARD TEXT */
+
+.card-content,
+.package-content {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.card-tag {
+    display: inline-block;
+    color: var(--white);
+    background: rgba(242, 162, 58, 0.95);
+    padding: 5px 12px;
+    margin-bottom: 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.destination-card h2 {
+    color: #ffffff;
+    font-size: 27px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.destination-card p {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.destination-card .btn {
+    width: 100%;
+}
+
+/* ==============================
+   ANIMATED BUTTONS
+============================== */
+
+.btn {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    padding: 13px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+    background: linear-gradient(
+        120deg,
+        var(--green-dark),
+        var(--green-light)
+    );
+    color: var(--white);
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-shadow:
+        0 6px 0 var(--green-dark),
+        0 12px 22px rgba(23, 63, 53, 0.18);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.3s ease;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -130%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.30),
+        transparent
+    );
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 150%;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(
+        120deg,
+        var(--green),
+        #419778
+    );
+    box-shadow:
+        0 9px 0 var(--green-dark),
+        0 18px 28px rgba(23, 63, 53, 0.25);
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 var(--green-dark);
+}
+
+.btn:focus-visible,
+.nav-links a:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 4px;
+}
+
+/* ==============================
+   CALL TO ACTION SECTIONS
+============================== */
+
+.packages-cta {
+    padding: 0 20px 65px;
+    text-align: center;
+}
+
+.packages-cta h2 {
+    color: var(--text-dark);
+    font-size: clamp(27px, 4vw, 40px);
+    margin-bottom: 18px;
+}
+
+.packages-cta p {
+    color: var(--text-dark);
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    min-width: 220px;
+    padding: 16px 28px;
+}
+
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 55px 20px 65px;
+    margin: 20px auto 0;
+    text-align: center;
+    clear: both;
+}
+
+.cta-section h2 {
+    width: 100%;
+    color: var(--text-dark);
+    font-size: clamp(27px, 4vw, 40px);
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    width: 100%;
+    color: var(--text-muted);
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+/* ==============================
+   CONTACT PAGE
+============================== */
+
+.contact-hero {
+    text-align: center;
+    padding: 60px 24px 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.contact-hero > p:last-child {
+    color: var(--text-muted);
+    font-size: 17px;
+}
+
+.contact-page {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 25px 0 70px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.contact-info h2,
+.contact-form-container h2 {
+    font-size: 28px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.contact-info > p:not(.section-label) {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--light-bg);
+}
+
+.contact-item h3 {
+    margin-bottom: 6px;
+}
+
+.contact-link {
+    display: inline-block;
+    color: var(--green);
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+.contact-form-container {
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--light-bg);
+    box-shadow: 0 10px 30px rgba(23, 63, 53, 0.08);
+}
+
+.contact-form-container > p {
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form-container label {
+    font-weight: 700;
+    margin-top: 7px;
+}
+
+.contact-form-container input,
+.contact-form-container select,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d4dfd9;
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--text-dark);
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-form-container input:focus,
+.contact-form-container select:focus,
+.contact-form-container textarea:focus {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 3px rgba(55, 131, 107, 0.13);
+}
+
+.contact-form-container textarea {
+    resize: vertical;
+}
+
+.contact-form-container button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.form-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* ==============================
+   HOME PAGE
+============================== */
+
+.home-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 620px;
+    padding: 80px 6%;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(
+            rgba(10, 35, 28, 0.62),
+            rgba(10, 35, 28, 0.72)
+        ),
+        url("boracay.jpg") center / cover no-repeat;
+}
+
+.home-hero-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeUp 0.8s ease both;
+}
+
+.home-hero .section-label {
+    color: #f2a23a;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.home-hero h1 {
+    color: #ffffff;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.home-hero-content > p:not(.section-label) {
+    max-width: 700px;
+    margin: 0 auto 32px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.home-buttons .btn {
+    min-width: 190px;
+}
+
+/* ==============================
+   HOME PAGE PROMO BANNER
+============================== */
+
+.promo-banner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    text-align: center;
+    padding: 55px 25px;
+    margin: 35px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            rgba(20, 59, 45, 0.92),
+            rgba(20, 59, 45, 0.92)
+        ),
+        url("boracay.jpg") center / cover no-repeat;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.promo-label {
+    color: #ffc66d;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.promo-banner h2 {
+    color: #ffffff;
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 15px;
+}
+
+.promo-banner > p:not(.promo-label):not(.promo-note) {
+    color: #f1f5f2;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.promo-discount {
+    display: inline-block;
+    background: #f4a340;
+    color: #183f32;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 900;
+    padding: 12px 28px;
+    border-radius: 12px;
+    margin: 5px 0 15px;
+}
+
+.promo-note {
+    color: #e0e9e3;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.promo-btn {
+    display: inline-block;
+}
+
+/* ==============================
+   TOUR PACKAGE SALE PRICES
+============================== */
+
+.sale-badge {
+    display: inline-block;
+    background: #c94335;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 7px 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.sale-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 9px;
+    margin: 15px 0 20px;
+}
+
+.original-price {
+    color: #dddddd;
+    text-decoration: line-through;
+    font-size: 15px;
+}
+
+.discounted-price {
+    color: #8ff0bb;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.price-per-person {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+}
+
+/* ==============================
+   DESTINATIONS PAGE
+============================== */
+
+.destinations-page {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 65px 0 70px;
+}
+
+.destinations-heading {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.destinations-heading .section-label {
+    margin-bottom: 15px;
+}
+
+.destinations-heading h1 {
+    color: var(--text-dark);
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.destinations-page .destination-grid {
+    margin-top: 30px;
+}
+
+.destinations-page .destination-card {
+    min-height: 380px;
+}
+
+.destinations-page .card-content {
+    width: 100%;
+}
+
+.destinations-page .destination-card h2 {
+    color: #ffffff;
+}
+
+.destinations-page .destination-card p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* ==============================
+   DESTINATIONS TRAVEL GUIDE
+============================== */
+
+.destination-hero {
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 6%;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(
+            rgba(12, 39, 31, 0.55),
+            rgba(12, 39, 31, 0.72)
+        ),
+        url("boracay.jpg") center 55% / cover no-repeat;
+}
+
+.destination-hero-content {
+    max-width: 850px;
+    animation: fadeUp 0.8s ease both;
+}
+
+.destination-hero .section-label {
+    color: #ffc36b;
+}
+
+.destination-hero h1 {
+    font-size: clamp(38px, 6vw, 66px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+    color: #ffffff;
+}
+
+.destination-hero-content > p:not(.section-label) {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.travel-intro {
+    max-width: 820px;
+    margin: auto;
+    padding: 85px 24px 35px;
+    text-align: center;
+}
+
+.travel-intro h2 {
+    font-size: clamp(29px, 4vw, 43px);
+    line-height: 1.25;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.travel-intro > p:last-child {
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--text-muted);
+}
+
+.travel-guide {
+    width: min(1160px, 90%);
+    margin: 55px auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: clamp(30px, 5vw, 75px);
+}
+
+.travel-guide.reverse .travel-guide-image {
+    order: 2;
+}
+
+.travel-guide.reverse .travel-guide-content {
+    order: 1;
+}
+
+.travel-guide-image {
+    position: relative;
+    min-width: 0;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #e5eee9;
+    box-shadow: 0 16px 38px rgba(23, 63, 53, 0.13);
+}
+
+.travel-guide-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.travel-guide-image:hover img {
+    transform: scale(1.045);
+}
+
+.guide-number {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    padding: 9px 15px;
+    border-radius: 30px;
+    background: rgba(23, 63, 53, 0.9);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.travel-guide-content {
+    padding: 20px 0;
+}
+
+.travel-guide-content .section-label {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    margin-bottom: 13px;
+}
+
+.travel-guide-content h2 {
+    color: var(--text-dark);
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.travel-guide-content > p:not(.section-label) {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.travel-guide-content h3 {
+    font-size: 17px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.guide-highlights {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.guide-highlights li {
+    position: relative;
+    padding-left: 27px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.guide-highlights li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--green-light);
+    font-weight: 800;
+}
+
+.guide-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--green);
+    font-weight: 800;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 6px;
+    transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.guide-link:hover {
+    gap: 18px;
+    color: var(--green-light);
+}
+
+.destination-cta {
+    margin-top: 90px;
+    padding: 75px 24px;
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.destination-cta h2 {
+    max-width: 780px;
+    margin: 0 auto 18px;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.3;
+    color: var(--text-dark);
+}
+
+.destination-cta > p:not(.section-label) {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-size: 17px;
+}
+
+/* ==============================
+   ANIMATIONS
+============================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   TABLET RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+    .destination-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .destination-card {
+        min-height: 360px;
+    }
+
+    .contact-page {
+        gap: 25px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 850px) {
+    .travel-guide {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin: 45px auto;
+    }
+
+    .travel-guide-image {
+        height: 360px;
+    }
+
+    .travel-guide-content h2 {
+        font-size: 31px;
+    }
+
+    .travel-guide-content > p:not(.section-label) {
+        font-size: 15px;
+    }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 650px) {
+    .destination-hero {
+        min-height: 430px;
+        padding: 60px 22px;
+    }
+
+    .destination-hero-content > p:not(.section-label) {
+        font-size: 16px;
+    }
+
+    .travel-intro {
+        padding: 60px 22px 20px;
+    }
+
+    .travel-intro > p:last-child {
+        font-size: 16px;
+    }
+
+    .travel-guide {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin: 38px auto 55px;
+    }
+
+    .travel-guide.reverse .travel-guide-image,
+    .travel-guide.reverse .travel-guide-content {
+        order: initial;
+    }
+
+    .travel-guide-image {
+        height: 300px;
+        border-radius: 18px;
+    }
+
+    .travel-guide-content {
+        padding: 0 3px;
+    }
+
+    .travel-guide-content h2 {
+        font-size: 32px;
+    }
+
+    .destination-cta {
+        margin-top: 55px;
+        padding: 55px 22px;
+    }
+}
+
+/* ==============================
+   SMALL MOBILE
+============================== */
+
+@media (max-width: 600px) {
+    .navbar {
+        width: 92%;
+        padding: 12px 0;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo img {
+    width: 155px;
+    max-height: 75px;
+}
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+        font-size: 14px;
+    }
+
+    .packages-hero {
+        padding: 45px 20px 30px;
+    }
+
+    .packages-hero .hero-content > p {
+        font-size: 16px;
+    }
+
+    .packages-hero .hero-content > p:first-child {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .section-description {
+        font-size: 16px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .destination-card {
+        min-height: 370px;
+    }
+
+    .packages-cta {
+        padding: 0 20px 45px;
+    }
+
+    .packages-cta p {
+        font-size: 16px;
+    }
+
+    .contact-hero {
+        padding: 45px 20px 25px;
+    }
+
+    .contact-page {
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 30px;
+    }
+
+    .contact-form-container {
+        padding: 22px;
+    }
+
+    .promo-banner {
+        width: 92%;
+        padding: 40px 20px;
+        margin: 25px auto;
+    }
+
+    .promo-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .discounted-price {
+        font-size: 22px;
+    }
+
+    .cta-section {
+        padding: 40px 20px 45px;
+    }
+
+    .cta-section p {
+        font-size: 16px;
+    }
+}
+
+/* ==============================
+   MOBILE NAVIGATION BUTTON
+   VISIBLE ONLY ON SMALL SCREENS
+============================== */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    padding: 25px 20px;
+    background: var(--green-dark);
+    color: var(--white);
+    text-align: center;
+}
+
+footer p + p {
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ==============================
+   ACCESSIBILITY: REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

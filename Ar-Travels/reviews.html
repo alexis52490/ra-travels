@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Reviews | RA TRAVELS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Reviews Page */
+        .reviews-page {
+    padding: 70px 7% 80px;
+    background: transparent;
+    min-height: 70vh;
+}
+
+        .reviews-heading {
+            max-width: 700px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .reviews-subtitle {
+            color: #d99032;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .reviews-heading h1 {
+            color: #174c3b;
+            font-size: clamp(28px, 4vw, 40px);
+            margin: 0 0 15px;
+        }
+
+        .reviews-heading p:last-child {
+            color: #66756d;
+            line-height: 1.7;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 16px;
+            border: 1px solid #e4ece6;
+            box-shadow: 0 8px 25px rgba(25, 65, 45, 0.07);
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 32px rgba(25, 65, 45, 0.12);
+        }
+
+        .review-stars {
+            color: #f2a72f;
+            font-size: 21px;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .review-text {
+            flex: 1;
+            color: #59665f;
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0 0 25px;
+        }
+
+        .review-customer {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding-top: 18px;
+            border-top: 1px solid #edf1ee;
+        }
+
+        .review-avatar {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #e0eee5;
+            color: #205c43;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .review-customer h3 {
+            color: #214b39;
+            font-size: 15px;
+            margin: 0 0 5px;
+        }
+
+        .review-customer span {
+            color: #7a867f;
+            font-size: 12px;
+        }
+
+        .reviews-note {
+            margin: 30px auto 0;
+            text-align: center;
+            color: #7a867f;
+            font-size: 12px;
+        }
+
+        .reviews-contact {
+    text-align: center;
+    padding: 45px 20px;
+    background: transparent;
+}
+
+        .reviews-contact h2 {
+            color: #174c3b;
+            margin-bottom: 12px;
+        }
+
+        .reviews-contact p {
+            color: #66756d;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 900px) {
+            .reviews-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .reviews-page {
+                padding: 50px 6%;
+            }
+
+            .reviews-container {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .review-card {
+                padding: 25px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <img src="ra-travels-logo.png"
+                     alt="RA Travels - Explore the World">
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="ra-travel.html">Tour Packages</a></li>
+                <li><a href="reviews.html" aria-current="page">Reviews</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Reviews Heading -->
+    <main>
+        <section class="reviews-page">
+
+            <div class="reviews-heading">
+                <p class="reviews-subtitle">
+                    TRAVELER TESTIMONIALS
+                </p>
+
+                <h1>Memories Worth Sharing</h1>
+
+                <p>
+                    Every journey creates a special memory.
+                    Discover the travel experiences and stories
+                    shared by our customers.
+                </p>
+            </div>
+
+            <!-- Review Cards -->
+            <div class="reviews-container">
+
+                <article class="review-card">
+                    <div class="review-stars"
+                         aria-label="5 out of 5 stars">
+                        ★★★★★
+                    </div>
+
+                    <p class="review-text">
+                        "The beach was beautiful, and the trip
+                        was an unforgettable experience. I would
+                        love to travel again!"
+                    </p>
+
+                    <div class="review-customer">
+                        <div class="review-avatar"
+                             aria-hidden="true">M</div>
+
+                        <div>
+                            <h3>Maria S.</h3>
+                            <span>Boracay Island Escape</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="review-card">
+                    <div class="review-stars"
+                         aria-label="5 out of 5 stars">
+                        ★★★★★
+                    </div>
+
+                    <p class="review-text">
+                        "A wonderful adventure with amazing
+                        mountain views. This trip gave me
+                        memories that I will always treasure."
+                    </p>
+
+                    <div class="review-customer">
+                        <div class="review-avatar"
+                             aria-hidden="true">J</div>
+
+                        <div>
+                            <h3>Joshua R.</h3>
+                            <span>Buscalan Adventure</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="review-card">
+                    <div class="review-stars"
+                         aria-label="5 out of 5 stars">
+                        ★★★★★
+                    </div>
+
+                    <p class="review-text">
+                        "I enjoyed exploring new places and
+                        taking beautiful photos. It was a fun
+                        and memorable getaway!"
+                    </p>
+
+                    <div class="review-customer">
+                        <div class="review-avatar"
+                             aria-hidden="true">A</div>
+
+                        <div>
+                            <h3>Angela P.</h3>
+                            <span>Cebu Island Tour</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="reviews-note">
+                Note: These are sample reviews for demonstration.
+                Replace them with genuine customer feedback when available.
+            </p>
+
+        </section>
+
+        <!-- Contact Call to Action -->
+        <section class="reviews-contact">
+            <h2>Ready for Your Next Adventure?</h2>
+
+            <p>
+                Let RA TRAVELS help you plan your next
+                unforgettable journey.
+            </p>
+
+            <a href="contact.html" class="btn">
+                Contact Us
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RA TRAVELS. All rights reserved.</p>
+        <p>Making every journey memorable.</p>
+    </footer>
+
+    <!-- Mobile Navigation -->
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuToggle.textContent = "☰";
+            });
+        });
+    </script>
+
+</body>
+</html>
