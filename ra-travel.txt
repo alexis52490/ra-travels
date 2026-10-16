@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | RA Travel & Tours</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION MENU BAR WITH LOGO -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="ra-travels-logo.png" alt="RA Logo">
+            <span>RA <span style="color: #333333; font-weight: 400;">Travel & Tours</span></span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ra-travel.html">Land Tours</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BOOKING FORM SECTION -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <h2>Book Your Tour Route</h2>
+            <p>Fill out your details below and our team will coordinate via Viber shortly.</p>
+            
+            <form action="#" method="POST" class="booking-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Juan Dela Cruz" required>
+                </div>
+                <div class="form-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div class="form-group">
+                        <label>Phone / Viber Number</label>
+                        <input type="tel" placeholder="0917XXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Route Destination</label>
+                        <select required style="height: 46px; background-color: white; border: 1px solid #cccccc; border-radius: 4px; padding: 10px;">
+                            <option value="zambales">Zambales Beach Escape</option>
+                            <option value="boracay">Boracay Getaway</option>
+                            <option value="palawan">Palawan Paradise</option>
+                            <option value="cebu">Cebu Heritage Circuit</option>
+                            <option value="buscalan">Buscalan Kalinga Trek</option>
+                            <option value="tutulari">Tutulari Reserve</option>
+                            <option value="inararo">Inararo View Deck Circuit</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn" style="margin-top: 15px; background-color: #0056b3; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; text-transform: uppercase;">Submit Routing Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Area Contact Details -->
+    <footer class="site-footer" style="background-color: #111111; color: #777777; padding: 30px; text-align: center; font-size: 13px; margin-top: 50px;">
+        <p style="color: #aaa; margin-bottom: 5px;">📍 Location: Bulacan / Metro Manila, Philippines &nbsp;|&nbsp; 📞 Mobile/Viber: +63 948 6860 907</p>
+        <p>&copy; 2026 RA Travel & Tours. Individual Activity #3 Portfolio.</p>
+    </footer>
+
+</body>
+</html>
