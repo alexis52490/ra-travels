@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,6 @@
     <title>Tour Packages | RA TRAVELS</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- TOUR PACKAGE BUTTON STYLES -->
     <style>
         .sale-badge {
             display: inline-block;
@@ -45,32 +45,41 @@
             font-size: 13px;
         }
 
-        /* INQUIRE NOW AND BOOK NOW BUTTONS */
-        .package-buttons {
+        /* PACKAGE BUTTONS */
+        .package-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
         }
 
-        .package-buttons .btn {
+        .package-actions .btn {
             flex: 1 1 120px;
             text-align: center;
+            text-decoration: none;
             box-sizing: border-box;
         }
 
-        .package-buttons .book-btn {
-            background-color: #d99b32;
+        .book-btn {
+            background: #21845b;
             color: #ffffff;
         }
 
-        .package-buttons .book-btn:hover {
-            background-color: #bd8120;
+        .book-btn:hover {
+            background: #176642;
         }
 
         @media (max-width: 600px) {
             .discounted-price {
                 font-size: 22px;
+            }
+
+            .package-actions {
+                flex-direction: column;
+            }
+
+            .package-actions .btn {
+                width: 100%;
             }
         }
     </style>
@@ -112,7 +121,6 @@
     <!-- TOUR PACKAGES -->
     <main>
         <section class="section" id="packages">
-
             <p class="section-label">TRAVEL WITH RA TRAVELS</p>
             <h2>Our Tour Packages</h2>
 
@@ -136,11 +144,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <div class="package-buttons">
-                            <a href="contact.html?destination=Boracay" class="btn">
+                        <div class="package-actions">
+                            <a href="contact.html?destination=Boracay"
+                               class="btn">
                                 Inquire Now
                             </a>
-                            <a href="contact.html?destination=Boracay&amp;booking=true" class="btn book-btn">
+
+                            <a href="booking.html?destination=Boracay"
+                               class="btn book-btn">
                                 Book Now
                             </a>
                         </div>
@@ -161,11 +172,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <div class="package-buttons">
-                            <a href="contact.html?destination=Buscalan" class="btn">
+                        <div class="package-actions">
+                            <a href="contact.html?destination=Buscalan"
+                               class="btn">
                                 Inquire Now
                             </a>
-                            <a href="contact.html?destination=Buscalan&amp;booking=true" class="btn book-btn">
+
+                            <a href="booking.html?destination=Buscalan"
+                               class="btn book-btn">
                                 Book Now
                             </a>
                         </div>
@@ -186,11 +200,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <div class="package-buttons">
-                            <a href="contact.html?destination=Cebu" class="btn">
+                        <div class="package-actions">
+                            <a href="contact.html?destination=Cebu"
+                               class="btn">
                                 Inquire Now
                             </a>
-                            <a href="contact.html?destination=Cebu&amp;booking=true" class="btn book-btn">
+
+                            <a href="booking.html?destination=Cebu"
+                               class="btn book-btn">
                                 Book Now
                             </a>
                         </div>
@@ -211,11 +228,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <div class="package-buttons">
-                            <a href="contact.html?destination=Zambales" class="btn">
+                        <div class="package-actions">
+                            <a href="contact.html?destination=Zambales"
+                               class="btn">
                                 Inquire Now
                             </a>
-                            <a href="contact.html?destination=Zambales&amp;booking=true" class="btn book-btn">
+
+                            <a href="booking.html?destination=Zambales"
+                               class="btn book-btn">
                                 Book Now
                             </a>
                         </div>
@@ -236,11 +256,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <div class="package-buttons">
-                            <a href="contact.html?destination=Inararo" class="btn">
+                        <div class="package-actions">
+                            <a href="contact.html?destination=Inararo"
+                               class="btn">
                                 Inquire Now
                             </a>
-                            <a href="contact.html?destination=Inararo&amp;booking=true" class="btn book-btn">
+
+                            <a href="booking.html?destination=Inararo"
+                               class="btn book-btn">
                                 Book Now
                             </a>
                         </div>
@@ -261,11 +284,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <div class="package-buttons">
-                            <a href="contact.html?destination=Baguio" class="btn">
+                        <div class="package-actions">
+                            <a href="contact.html?destination=Baguio"
+                               class="btn">
                                 Inquire Now
                             </a>
-                            <a href="contact.html?destination=Baguio&amp;booking=true" class="btn book-btn">
+
+                            <a href="booking.html?destination=Baguio"
+                               class="btn book-btn">
                                 Book Now
                             </a>
                         </div>
@@ -281,7 +307,6 @@
                 depending on travel dates, group size, accommodation,
                 and package inclusions.
             </p>
-
         </section>
 
         <!-- CALL TO ACTION -->
