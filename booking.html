@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip | RA TRAVELS</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .booking-section {
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 35px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        .booking-section h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .booking-intro {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666666;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 7px;
+            font: inherit;
+            box-sizing: border-box;
+            background: #ffffff;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .booking-submit {
+            grid-column: 1 / -1;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .booking-message {
+            display: none;
+            grid-column: 1 / -1;
+            padding: 15px;
+            border-radius: 8px;
+            background: #eef8f1;
+            color: #24643b;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .booking-section {
+                margin: 30px 15px;
+                padding: 22px 18px;
+            }
+
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width,
+            .booking-submit,
+            .booking-message {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="ra-travels-logo.png" alt="RA Travels Logo">
+                <span>RA TRAVELS</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="ra-travel.html">Tour Packages</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <h1>Book Your Adventure</h1>
+
+            <p class="booking-intro">
+                Complete the form below to request your trip with RA TRAVELS.
+            </p>
+
+            <form class="booking-form" id="bookingForm">
+
+                <div class="form-group full-width">
+                    <label for="destination">Choose Your Tour Package</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Select a destination</option>
+                        <option value="Boracay">Boracay Island Escape</option>
+                        <option value="Buscalan">Buscalan Cultural Adventure</option>
+                        <option value="Cebu">Cebu Nature & Island Tour</option>
+                        <option value="Zambales">Zambales Coastal Escape</option>
+                        <option value="Inararo">Inararo Nature Adventure</option>
+                        <option value="Baguio">Baguio Mountain Retreat</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="travelDate">Preferred Travel Date</label>
+                    <input type="date" id="travelDate" name="travelDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="travelers">Number of Travelers</label>
+                    <input type="number" id="travelers" name="travelers"
+                           min="1" max="50" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="phone">Contact Number</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="Enter your contact number" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="requests">Additional Requests (Optional)</label>
+                    <textarea id="requests" name="requests"
+                              placeholder="Tell us about any special requests or questions."></textarea>
+                </div>
+
+                <button type="submit" class="btn booking-submit">
+                    Submit Booking Request
+                </button>
+
+                <div class="booking-message" id="bookingMessage" role="status">
+                    <strong>Your form has been completed!</strong>
+                    <p>
+                        This is a demonstration form. Your booking details have
+                        not been sent to RA TRAVELS. Please contact us to confirm
+                        your request.
+                    </p>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RA TRAVELS. All Rights Reserved.</p>
+        <p>Your Journey, Our Passion.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const destination = params.get("destination");
+
+        if (destination) {
+            document.getElementById("destination").value = destination;
+        }
+
+        const today = new Date();
+        const localToday = new Date(
+            today.getTime() - today.getTimezoneOffset() * 60000
+        ).toISOString().split("T")[0];
+
+        document.getElementById("travelDate").min = localToday;
+
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!this.reportValidity()) return;
+
+            document.getElementById("bookingMessage").style.display = "block";
+            document.getElementById("bookingMessage").scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        });
+    </script>
+
+</body>
+</html>
