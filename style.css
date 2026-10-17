@@ -1291,3 +1291,11 @@ footer p + p {
         scroll-behavior: auto !important;
     }
 }
+
+
+
+/* Buscalan image - Destinations page only */
+.travel-guide-image.buscalan-image img {
+    object-fit: cover;
+    object-position: center top !important;
+}
