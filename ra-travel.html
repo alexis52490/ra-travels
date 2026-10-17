@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Packages | RA TRAVELS</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- TOUR PACKAGE BUTTON STYLES -->
+    <style>
+        .sale-badge {
+            display: inline-block;
+            background: #c94335;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 7px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .sale-price {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 9px;
+            margin: 15px 0 20px;
+        }
+
+        .original-price {
+            color: #888888;
+            text-decoration: line-through;
+            font-size: 15px;
+        }
+
+        .discounted-price {
+            color: #21845b;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .price-per-person {
+            color: #666666;
+            font-size: 13px;
+        }
+
+        /* INQUIRE NOW AND BOOK NOW BUTTONS */
+        .package-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .package-buttons .btn {
+            flex: 1 1 120px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .package-buttons .book-btn {
+            background-color: #d99b32;
+            color: #ffffff;
+        }
+
+        .package-buttons .book-btn:hover {
+            background-color: #bd8120;
+        }
+
+        @media (max-width: 600px) {
+            .discounted-price {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +91,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
                 <li><a href="ra-travel.html" class="active">Tour Packages</a></li>
-<li><a href="reviews.html">Reviews</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -68,9 +137,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <a href="contact.html?destination=Boracay" class="btn">
-                            Inquire Now
-                        </a>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Boracay" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="contact.html?destination=Boracay&amp;booking=true" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -88,9 +162,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <a href="contact.html?destination=Buscalan" class="btn">
-                            Inquire Now
-                        </a>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Buscalan" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="contact.html?destination=Buscalan&amp;booking=true" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -108,9 +187,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <a href="contact.html?destination=Cebu" class="btn">
-                            Inquire Now
-                        </a>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Cebu" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="contact.html?destination=Cebu&amp;booking=true" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -128,9 +212,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <a href="contact.html?destination=Zambales" class="btn">
-                            Inquire Now
-                        </a>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Zambales" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="contact.html?destination=Zambales&amp;booking=true" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -148,9 +237,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <a href="contact.html?destination=Inararo" class="btn">
-                            Inquire Now
-                        </a>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Inararo" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="contact.html?destination=Inararo&amp;booking=true" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -168,9 +262,14 @@
                             <span class="price-per-person">/ person</span>
                         </div>
 
-                        <a href="contact.html?destination=Baguio" class="btn">
-                            Inquire Now
-                        </a>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Baguio" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="contact.html?destination=Baguio&amp;booking=true" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -200,51 +299,6 @@
         <p>Your Journey, Our Passion.</p>
     </footer>
 
-    <!-- SALE STYLES -->
-    <style>
-        .sale-badge {
-            display: inline-block;
-            background: #c94335;
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            padding: 7px 12px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-        }
-
-        .sale-price {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 9px;
-            margin: 15px 0 20px;
-        }
-
-        .original-price {
-            color: #888888;
-            text-decoration: line-through;
-            font-size: 15px;
-        }
-
-        .discounted-price {
-            color: #21845b;
-            font-size: 25px;
-            font-weight: 800;
-        }
-
-        .price-per-person {
-            color: #666666;
-            font-size: 13px;
-        }
-
-        @media (max-width: 600px) {
-            .discounted-price {
-                font-size: 22px;
-            }
-        }
-    </style>
-
 </body>
 </html>
+```
