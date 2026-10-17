@@ -4,99 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Trip | RA TRAVELS</title>
+    <title>Tour Packages | RA TRAVELS</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .booking-section {
-            max-width: 850px;
-            margin: 60px auto;
-            padding: 35px;
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+        .sale-badge {
+            display: inline-block;
+            background: #c94335;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 7px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
         }
 
-        .booking-section h1 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .booking-intro {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #666666;
-        }
-
-        .booking-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-group {
+        .sale-price {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 9px;
+            margin: 15px 0 20px;
         }
 
-        .form-group.full-width {
-            grid-column: 1 / -1;
+        .original-price {
+            color: #888888;
+            text-decoration: line-through;
+            font-size: 15px;
         }
 
-        .form-group label {
-            font-weight: 600;
+        .discounted-price {
+            color: #21845b;
+            font-size: 25px;
+            font-weight: 800;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cccccc;
-            border-radius: 7px;
-            font: inherit;
+        .price-per-person {
+            color: #666666;
+            font-size: 13px;
+        }
+
+        .package-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .package-buttons .btn {
+            flex: 1 1 120px;
+            text-align: center;
             box-sizing: border-box;
-            background: #ffffff;
         }
 
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
+        .package-buttons .book-btn {
+            background-color: #d99b32;
+            color: #ffffff;
         }
 
-        .booking-submit {
-            grid-column: 1 / -1;
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            font: inherit;
-        }
-
-        .booking-message {
-            display: none;
-            grid-column: 1 / -1;
-            padding: 15px;
-            border-radius: 8px;
-            background: #eef8f1;
-            color: #24643b;
-            line-height: 1.6;
+        .package-buttons .book-btn:hover {
+            background-color: #bd8120;
         }
 
         @media (max-width: 600px) {
-            .booking-section {
-                margin: 30px 15px;
-                padding: 22px 18px;
-            }
-
-            .booking-form {
-                grid-template-columns: 1fr;
-            }
-
-            .form-group.full-width,
-            .booking-submit,
-            .booking-message {
-                grid-column: 1;
+            .discounted-price {
+                font-size: 22px;
             }
         }
     </style>
@@ -114,85 +87,202 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="ra-travel.html">Tour Packages</a></li>
+                <li><a href="ra-travel.html" class="active">Tour Packages</a></li>
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="booking-section">
-            <h1>Book Your Adventure</h1>
+    <section class="packages-hero">
+        <div class="hero-content">
+            <p>YOUR JOURNEY STARTS HERE</p>
+            <h1>Explore Our Tour Packages</h1>
+            <p>
+                Discover beautiful destinations in the Philippines
+                with exciting and affordable travel packages.
+            </p>
+            <a href="#packages" class="btn">Explore Packages</a>
+        </div>
+    </section>
 
-            <p class="booking-intro">
-                Complete the form below to request your trip with RA TRAVELS.
+    <main>
+        <section class="section" id="packages">
+
+            <p class="section-label">TRAVEL WITH RA TRAVELS</p>
+            <h2>Our Tour Packages</h2>
+
+            <p class="section-description">
+                Choose your next adventure and create unforgettable memories.
             </p>
 
-            <form class="booking-form" id="bookingForm">
+            <div class="destination-grid">
 
-                <div class="form-group full-width">
-                    <label for="destination">Choose Your Tour Package</label>
-                    <select id="destination" name="destination" required>
-                        <option value="">Select a destination</option>
-                        <option value="Boracay">Boracay Island Escape</option>
-                        <option value="Buscalan">Buscalan Cultural Adventure</option>
-                        <option value="Cebu">Cebu Nature &amp; Island Tour</option>
-                        <option value="Zambales">Zambales Coastal Escape</option>
-                        <option value="Inararo">Inararo Nature Adventure</option>
-                        <option value="Baguio">Baguio Mountain Retreat</option>
-                    </select>
-                </div>
+                <!-- BORACAY -->
+                <article class="destination-card boracay">
+                    <div class="package-content">
+                        <span class="sale-badge">20% OFF</span>
+                        <h2>Boracay Island Escape</h2>
+                        <p>Enjoy white sand beaches and crystal-clear waters.</p>
+                        <p><strong>Duration:</strong> 3 Days / 2 Nights</p>
 
-                <div class="form-group">
-                    <label for="travelDate">Preferred Travel Date</label>
-                    <input type="date" id="travelDate" name="travelDate" required>
-                </div>
+                        <div class="sale-price">
+                            <span class="original-price">₱5,500</span>
+                            <span class="discounted-price">₱4,400</span>
+                            <span class="price-per-person">/ person</span>
+                        </div>
 
-                <div class="form-group">
-                    <label for="travelers">Number of Travelers</label>
-                    <input type="number" id="travelers" name="travelers"
-                           min="1" max="50" value="1" required>
-                </div>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Boracay" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="booking.html?destination=Boracay" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName"
-                           placeholder="Enter your full name" required>
-                </div>
+                <!-- BUSCALAN -->
+                <article class="destination-card buscalan">
+                    <div class="package-content">
+                        <span class="sale-badge">20% OFF</span>
+                        <h2>Buscalan Cultural Adventure</h2>
+                        <p>Experience mountain scenery and rich local culture.</p>
+                        <p><strong>Duration:</strong> 2 Days / 1 Night</p>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email"
-                           placeholder="you@example.com" required>
-                </div>
+                        <div class="sale-price">
+                            <span class="original-price">₱4,000</span>
+                            <span class="discounted-price">₱3,200</span>
+                            <span class="price-per-person">/ person</span>
+                        </div>
 
-                <div class="form-group full-width">
-                    <label for="phone">Contact Number</label>
-                    <input type="tel" id="phone" name="phone"
-                           placeholder="Enter your contact number" required>
-                </div>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Buscalan" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="booking.html?destination=Buscalan" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="form-group full-width">
-                    <label for="requests">Additional Requests (Optional)</label>
-                    <textarea id="requests" name="requests"
-                              placeholder="Tell us about any special requests or questions."></textarea>
-                </div>
+                <!-- CEBU -->
+                <article class="destination-card cebu">
+                    <div class="package-content">
+                        <span class="sale-badge">20% OFF</span>
+                        <h2>Cebu Nature &amp; Island Tour</h2>
+                        <p>Explore beautiful beaches, waterfalls, and islands.</p>
+                        <p><strong>Duration:</strong> 3 Days / 2 Nights</p>
 
-                <button type="submit" class="btn booking-submit">
-                    Submit Booking Request
-                </button>
+                        <div class="sale-price">
+                            <span class="original-price">₱4,500</span>
+                            <span class="discounted-price">₱3,600</span>
+                            <span class="price-per-person">/ person</span>
+                        </div>
 
-                <div class="booking-message" id="bookingMessage" role="status">
-                    <strong>Your form has been completed!</strong>
-                    <p>
-                        This is a demonstration form. Your booking details have
-                        not been sent to RA TRAVELS. Please contact us to confirm
-                        your request.
-                    </p>
-                </div>
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Cebu" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="booking.html?destination=Cebu" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-            </form>
+                <!-- ZAMBALES -->
+                <article class="destination-card zambales">
+                    <div class="package-content">
+                        <span class="sale-badge">20% OFF</span>
+                        <h2>Zambales Coastal Escape</h2>
+                        <p>Discover scenic coves and relaxing coastal views.</p>
+                        <p><strong>Duration:</strong> 2 Days / 1 Night</p>
+
+                        <div class="sale-price">
+                            <span class="original-price">₱2,500</span>
+                            <span class="discounted-price">₱2,000</span>
+                            <span class="price-per-person">/ person</span>
+                        </div>
+
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Zambales" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="booking.html?destination=Zambales" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- INARARO -->
+                <article class="destination-card inararo">
+                    <div class="package-content">
+                        <span class="sale-badge">20% OFF</span>
+                        <h2>Inararo Nature Adventure</h2>
+                        <p>Enjoy a refreshing escape surrounded by nature.</p>
+                        <p><strong>Duration:</strong> Day Tour</p>
+
+                        <div class="sale-price">
+                            <span class="original-price">₱3,500</span>
+                            <span class="discounted-price">₱2,800</span>
+                            <span class="price-per-person">/ person</span>
+                        </div>
+
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Inararo" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="booking.html?destination=Inararo" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BAGUIO -->
+                <article class="destination-card baguio">
+                    <div class="package-content">
+                        <span class="sale-badge">20% OFF</span>
+                        <h2>Baguio Mountain Retreat</h2>
+                        <p>Relax in cool weather and beautiful mountain scenery.</p>
+                        <p><strong>Duration:</strong> 2 Days / 1 Night</p>
+
+                        <div class="sale-price">
+                            <span class="original-price">₱3,500</span>
+                            <span class="discounted-price">₱2,800</span>
+                            <span class="price-per-person">/ person</span>
+                        </div>
+
+                        <div class="package-buttons">
+                            <a href="contact.html?destination=Baguio" class="btn">
+                                Inquire Now
+                            </a>
+                            <a href="booking.html?destination=Baguio" class="btn book-btn">
+                                Book Now
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="form-note">
+                Note: These are sample promotional prices for academic
+                project purposes only. Actual travel rates may vary
+                depending on travel dates, group size, accommodation,
+                and package inclusions.
+            </p>
+
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready for Your Next Adventure?</h2>
+            <p>Contact RA TRAVELS and let us help you plan your trip.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
         </section>
     </main>
 
@@ -200,34 +290,6 @@
         <p>&copy; 2026 RA TRAVELS. All Rights Reserved.</p>
         <p>Your Journey, Our Passion.</p>
     </footer>
-
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const destination = params.get("destination");
-
-        if (destination) {
-            document.getElementById("destination").value = destination;
-        }
-
-        const today = new Date();
-        const localToday = new Date(
-            today.getTime() - today.getTimezoneOffset() * 60000
-        ).toISOString().split("T")[0];
-
-        document.getElementById("travelDate").min = localToday;
-
-        document.getElementById("bookingForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            if (!this.reportValidity()) return;
-
-            document.getElementById("bookingMessage").style.display = "block";
-            document.getElementById("bookingMessage").scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-        });
-    </script>
 
 </body>
 </html>
